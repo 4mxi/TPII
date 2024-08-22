@@ -50,13 +50,14 @@ class PizzaBuilder{
     addIngredienteExtra(extra){
         this.ingredienteExtra = new IngredienteExtra(extra);
         return this
-
-    construirPizza(){
+    }
+    construir(){
         return new Pizza(this.tamanho, this.borda, this.sabores, this.ingredienteExtra);
     }
 }
 
 // Construindo Pizza
+
 class Pizza{
     constructor(tamanho, borda, sabores, ingredienteExtra){
         this.tamanho = tamanho;
@@ -71,6 +72,7 @@ class Pizza{
         Borda:${this.borda.saborBorda}
         Sabores:${this.sabores.sabor}
         Ingrediente Extra:${this.ingredienteExtra.extra}`)
+    }
 }
 
 // Interface de utilização - usando builder para construir a pizza
