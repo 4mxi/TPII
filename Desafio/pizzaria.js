@@ -84,6 +84,6 @@ const pizza1 = builder
     .addBorda('catupiry')
     .addSabores('tradicional')
     .addIngredienteExtra('azeitona')
-    .contruir()
+    .construir()
 
 pizza1.mostrarDetalhes();
