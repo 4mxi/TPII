@@ -46,10 +46,42 @@ class PizzaBuilder{
         this.sabores = new Sabores(sabor);
         return this
     }
+
+    addIngredienteExtra(extra){
+        this.ingredienteExtra = new IngredienteExtra(extra);
+        return this
+
+    construirPizza(){
+        return new Pizza(this.tamanho, this.borda, this.sabores, this.ingredienteExtra);
+    }
 }
 
-
 // Construindo Pizza
+class Pizza{
+    constructor(tamanho, borda, sabores, ingredienteExtra){
+        this.tamanho = tamanho;
+        this.borda = borda;
+        this.sabores = sabores;
+        this.ingredienteExtra = ingredienteExtra;
+    }
 
+    mostrarDetalhes(){
+        console.log(`DETALHES DA PIZZA:
+        Tamanho:${this.tamanho.tipo}
+        Borda:${this.borda.saborBorda}
+        Sabores:${this.sabores.sabor}
+        Ingrediente Extra:${this.ingredienteExtra.extra}`)
+}
 
 // Interface de utilização - usando builder para construir a pizza
+
+const builder = new PizzaBuilder();
+
+const pizza1 = builder
+    .addTamanho('Grande')
+    .addBorda('catupiry')
+    .addSabores('tradicional')
+    .addIngredienteExtra('azeitona')
+    .contruir()
+
+pizza1.mostrarDetalhes();
